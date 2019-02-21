@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css?family=Coiny');
+
+$size: 150px;
+$tree: #a50;
+$leaf: #5b5;
+$background: #5637BB;
+
+body{
+    padding: 0;
+    margin: 0;
+}
+
+.wrapper{
+    text-align: center;
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    background-color: $background;
+    padding: 0 10px;
+}
+
+svg {
+    width: $size;
+    height: $size;
+    margin-top: -($size/2);
+    margin-left: -($size/2);
+    user-select: none;
+}
+
+.tree { fill: $tree; }
+.leaf-1 { fill: darken($leaf, 2%); }
+.leaf-2 { fill: darken($leaf, 4%); }
+.leaf-3 { fill: darken($leaf, 6%); }
+.leaf-4 { fill: darken($leaf, 8%); }
+.leaf-5 { fill: darken($leaf, 10%); }
+.leaf-6 { fill: darken($leaf, 12%); }
+.leaf-7 { fill: darken($leaf, 14%); }
+.leaf-8 { fill: darken($leaf, 16%); }
+.leaf-9 { fill: darken($leaf, 18%); }
+.leaf-10 { fill: darken($leaf, 20%); }
+.leaf-11 { fill: darken($leaf, 22%); }
+
+.animatedTextContainer {
+    --maskX: 0;
+    --maskY: 0;
+    position: relative;
+    cursor: default;
+    user-select:none;
+}
+
+%animated{
+    color: #000000;
+    font-size: 140px;
+    font-weight: 700;
+    font-family: 'Coiny', cursive;
+    line-height: 1.1;
+    letter-spacing: 5px;
+    text-shadow: 5px 3px 8px rgba(0, 0, 0, 0.2);
+    margin: 0;
+}
+
+.animatedTextContent {
+    @extend %animated;
+}
+
+.animatedTextContentClone {
+    @extend %animated;
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #ffffff;
+    transition: all 0.4s ease-out;
+    clip-path: polygon(
+        0 0,
+        calc(var(--maskX) * 1% + (var(--maskY) - 50) * 0.4%) 0,
+        calc(var(--maskX) * 1% + (var(--maskY) - 50) * -0.4%) 100%,
+        0 100%
+    );
+}
