@@ -1,2 +1,2 @@
 ## text-animation-hooks
-![Build Better](https://raw.githubusercontent.com/ebrugulec/text-animation-hooks/master/build-better.gif)
+![Build Better](https://github.com/ebrugulec/text-animation-hooks/blob/master/build-better.gif)
